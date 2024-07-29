@@ -1,5 +1,8 @@
-:repository-owner: arduino-libraries
+:repository-owner: joeyparrish
 :repository-name: Ethernet
+:url-arduino-cli: https://arduino.github.io/arduino-cli/0.35/installation/
+:url-issue-267: https://github.com/arduino-libraries/Ethernet/issues/267
+:url-pr-268: https://github.com/arduino-libraries/Ethernet/pull/268
 
 = {repository-name} Library for Arduino =
 
@@ -11,6 +14,25 @@ With the Arduino Ethernet Shield, this library allows an Arduino board to connec
 
 For more information about this library please visit us at
 https://www.arduino.cc/en/Reference/{repository-name}
+
+== Fork Information ==
+
+This fork fixes upstream {url-issue-267}[issue #267], in which SPI and socket settings can't be changed without modifying the library.  It does this by incorporating {url-pr-268}[PR #268].
+
+Because the upstream repo seems to be unmaintained (judging by the lack of
+activity on issues and PRs), this fork will stand for the foreseeable future.
+
+== Fork Installation Instructions ==
+
+Install `arduino-cli` as detailed in the {url-arduino-cli}[Arduino CLI installation docs].
+
+Then run:
+
+[,sh]
+----
+   arduino-cli config set library.enable_unsafe_install true
+   arduino-cli lib install --git-url https://github.com/joeyparrish/Ethernet
+----
 
 == License ==
 
